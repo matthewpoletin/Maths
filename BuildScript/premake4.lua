@@ -36,7 +36,7 @@ solution("Maths")
 	if(premake_ver == 5) then
 		startproject("Tests")
 	end
-	location(working_dir .. "Maths/")
+	location(working_dir .. "Source/")
 	includedirs { working_dir .. "Dependencies/Include" }
 
 	if (ide_os == "windows") then
@@ -69,16 +69,12 @@ solution("Maths")
 
 		targetname ("Maths")
 		if (ide_os == "windows") then targetextension ".lib" end
-		location (working_dir .. "Maths")
+		location (working_dir .. "Source")
 
 		files {
-			working_dir .. "Maths" .. "/**.h",
-			working_dir .. "Maths" .. "/**.cpp"
+			working_dir .. "Source" .. "/**.h",
+			working_dir .. "Source" .. "/**.cpp"
 		}
-
-		-- links {
-		-- 	"tinyxml2"
-		-- }
 
 		defines { "_LIB", "_CONSOLE" }
 
@@ -116,7 +112,7 @@ solution("Maths")
 			working_dir .. "Tests" .. "/**.cpp"
 		}
 
-		includedirs { working_dir .. "Maths" }
+		includedirs { working_dir .. "Source" }
 		links {
 			"Maths"
 		}

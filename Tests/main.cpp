@@ -14,6 +14,8 @@ int main()
 	Test1();
 	Test2();
 
+	system("PAUSE");
+
 	return 0;
 }
 
